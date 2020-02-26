@@ -126,32 +126,44 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.fb_main_menu:
                 if (fabIsOpen) {
-                    fbBellMan.setEnabled(false);
-                    closeMenu(fbMap, 100);
-                    closeMenu(fbAttraction, 200);
-                    closeMenu(fbEvents, 300);
-                    closeMenu(fbHotSpots, 400);
-
-                    // Enable button and remove the transparent layer
-                    enableBellButton();
+                    closeFB();
                 } else {
-                    scrollView.setAlpha(0.5f);
-                    constAppBarLayout.setAlpha(0.5f);
-                    constAppBottomLayout.setAlpha(0.5f);
-                    openMenu(fbHotSpots, 100);
-                    openMenu(fbEvents, 200);
-                    openMenu(fbAttraction, 300);
-                    openMenu(fbMap, 400);
+                    openFB();
                 }
                 break;
             case R.id.tv_error_message:
-                homeViewModel.getAttractions().removeObservers(this);
-                homeViewModel.getHotSpots().removeObservers(this);
-                subscribeObservers();
+                refresh();
                 break;
 
         }
     }
+
+    private void refresh() {
+        homeViewModel.getAttractions().removeObservers(this);
+        homeViewModel.getHotSpots().removeObservers(this);
+        subscribeObservers();
+    }
+
+    private void closeFB() {
+        fbBellMan.setEnabled(false);
+        closeMenu(fbMap, 100);
+        closeMenu(fbAttraction, 200);
+        closeMenu(fbEvents, 300);
+        closeMenu(fbHotSpots, 400);
+        // Enable button and remove the transparent layer
+        enableBellButton();
+    }
+
+    private void openFB() {
+        scrollView.setAlpha(0.5f);
+        constAppBarLayout.setAlpha(0.5f);
+        constAppBottomLayout.setAlpha(0.5f);
+        openMenu(fbHotSpots, 100);
+        openMenu(fbEvents, 200);
+        openMenu(fbAttraction, 300);
+        openMenu(fbMap, 400);
+    }
+
 
     private void enableBellButton() {
         Handler handler = new Handler();
