@@ -1,0 +1,20 @@
+<resources>
+    <!--AppName-->
+    <string name="app_name">BellMan Task</string>
+
+    <!--HomeActivity-->
+    <string name="text_you_are_in">You are in</string>
+    <string name="text_misr_algadida">Misr Al Gadida - Egypt</string>
+    <string name="text_hotspots">Hotspots</string>
+    <string name="text_view_all">View All</string>
+    <string name="text_events">Events</string>
+    <string name="text_attractions">Attractions</string>
+    <string name="text_title">Title</string>
+    <string name="text_category">Category</string>
+    <string name="text_map">Map</string>
+    <string name="text_home">Home</string>
+    <string name="text_search">Search</string>
+    <string name="text_profile">Profile</string>
+    <string name="text_trophy">Trophy</string>
+    <string name="something_went_wrong">Something went wrong\n Tap to try again</string>
+</resources>
